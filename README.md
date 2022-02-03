@@ -6,15 +6,11 @@ List of Each Command: <a href=https://github.com/DevDan0/Flurry-Discord-Bot/blob
 
 Stuff you need:
 
-
 • Python, obviously.
-
 
 • <a href=https://praw.readthedocs.io/>Praw</a>
 
-
 • <a href=https://discordpy.readthedocs.io/>Discord.py</a>
-
 
 • <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a>
 
