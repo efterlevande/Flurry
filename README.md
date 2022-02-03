@@ -2,6 +2,7 @@
  Feature Rich Discord bot made in python
 
 
+List of Each Command: <a href=https://github.com/DevDan0/Flurry-Discord-Bot/blob/main/explaining-each-command.md> here</a>
 
 
 
