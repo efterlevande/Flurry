@@ -12,7 +12,7 @@
 ?ctof: **convert celsius to fahrenheit**
 
 
-?time: **current time in utc"
+?time: **current time in utc**
 
 
 ?rusroulet: **Russian Roulette Game**
@@ -55,3 +55,5 @@
 
 
 ?play: **play music through the bot, you can provide a link or just list the name of the song**
+
+?tts: **text to speech**
