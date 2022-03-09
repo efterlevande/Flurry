@@ -15,6 +15,8 @@ Stuff you need:
 
 • <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a>
 
+• gTTS
+
 
 thank to <a href =https://github.com/breadtard>breadtard</a> for helping with the debugging code 
 also thank to <a href=https://github.com/poopyyyyy>poopy</a> for help in testing stuff
