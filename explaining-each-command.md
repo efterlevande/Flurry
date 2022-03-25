@@ -57,3 +57,5 @@
 ?play: **play music through the bot, you can provide a link or just list the name of the song**
 
 ?tts: **text to speech**
+
+?makeaquote: **text on image, basically**
