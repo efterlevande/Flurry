@@ -4,6 +4,7 @@ import discord
 import praw
 import random
 from gtts import gTTS
+from moviepy.editor import *
 import time 
 import textwrap
 import asyncio
