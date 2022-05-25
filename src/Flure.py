@@ -240,6 +240,26 @@ async def play(ctx,link):
     await ctx.send("join a vc first")
   return
 
+@client.command()
+async def despicableme(ctx):
+  if ctx.message.attachments:
+    for attachment in ctx.message.attachments:
+      await attachment.save("lol.mp3")
+      videoclip = VideoFileClip("lol.mp3")
+      audioclip = AudioFileClip("despicable.mp3")
+      new_audioclip = CompositeAudioClip([audioclip])
+      videoclip.audio = new_audioclip
+      videoclip.write_videofile("new.mp4")
+      await ctx.send(file=discord.File('new.mp4'))
+      os.system("rm lol.mp3")
+      os.system("rm new.mp4")
+    return
+  else:
+    await ctx.send("no")
+    return
+  
+  return
+  
 ################
 
 
