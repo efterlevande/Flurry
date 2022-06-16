@@ -1,4 +1,4 @@
-# Flurry-Discord-Bot
+# Flurry
  
 Discord bot made in python
 
