@@ -11,7 +11,7 @@ Stuff you need:
 
 • <a href=https://praw.readthedocs.io/>Praw</a>
 
-• <a href=https://discordpy.readthedocs.io/>Discord.py</a>
+• <a href=https://github.com/Pycord-Development/pycord/>Pycord</a>
 
 • <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a>
 
@@ -19,6 +19,11 @@ Stuff you need:
 
 • gTTS
 
+• setup google drive (better on a burner acc.) for the leaderboard
 
-thank to <a href =https://github.com/breadtard>breadtard</a> for helping with the debugging code 
-also thank to <a href=https://github.com/poopyyyyy>poopy</a> for help in testing stuff
+
+
+
+thanks to <a href=https://github.com/poopyyyyy>poopy</a> for help in testing stuff
+
+this is the final update for furry bot. thank you.
