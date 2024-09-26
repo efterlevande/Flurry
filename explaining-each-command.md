@@ -14,7 +14,7 @@
 
 /tts: **text to speech**
 
-/search: **Search using duckduckgo, to change the browser just switch the duckduckgo link to google.**
+/search: **Search using duckduckgo, to change to google just switch the duckduckgo link to google.**
 
 /ban: **Ban members.**
 
