@@ -9,8 +9,6 @@ Stuff you need:
 
 • Python, obviously.
 
-• <a href=https://praw.readthedocs.io/>Praw</a>
-
 • <a href=https://github.com/Pycord-Development/pycord/>Pycord</a>
 
 • <a href=https://github.com/yt-dlp/yt-dlp>yt-dlp</a>
@@ -19,7 +17,7 @@ Stuff you need:
 
 • gTTS
 
-• setup google drive (better on a burner acc.) for the leaderboard
+• setup google drive (better on a burner acc.) for the leaderboard and edit code to set it up for the thing you want, like anything it could be like tag idk 
 
 
 
