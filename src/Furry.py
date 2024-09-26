@@ -3,7 +3,6 @@ import sys
 import json
 import discord
 import re
-import praw
 import random
 import subprocess
 import asyncio
@@ -44,11 +43,6 @@ print("Reconstructing data as dict...")
 secrets = json.loads(popbot_secrets)
 del(popbot_secrets)
 
-reddit = praw.Reddit(
-client_id="",
-client_secret="",
-user_agent="",
-)
 # end of wacky shenanigans
 
 intents = discord.Intents.default()
