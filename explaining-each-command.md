@@ -1,61 +1,44 @@
 #Commands:
 
-?ping: **Get The Delay Between You and the Bot.**
+/ping: **Get The Delay Between You and the Bot.**
 
+/convert: **convert between units, [lbs, kg] [cm,in] [f,c] units automatically detected**
 
-?lbstokg: **Convert Pounds to Kg**
+/rusroulet: **Russian Roulette Game**
 
+/av: **Get user avatar/pfp's**
 
-?inchestocm: **Convert Inches to cm**
+/math: **Very Basic Calculator**
 
+/echo: **Makes the bot say something, Remove the hashtag before the @has_permission to make it only for admins/mod**
 
-?ctof: **convert celsius to fahrenheit**
+/tts: **text to speech**
 
+/search: **Search using duckduckgo, to change the browser just switch the duckduckgo link to google.**
 
-?time: **current time in utc**
+/ban: **Ban members.**
 
+/clear: **Clear messages using the bot, default value is 5.**
 
-?rusroulet: **Russian Roulette Game**
+/roll: **Roll a Dice**
 
+/8ball: **8ball**
 
-?avatar: **Get user avatar/pfp's**
+/bmi: **body mass index**
 
+/thing: **the thing done** (tracks the one doing it and the one who it is done to)
 
-?meme: **Gets memes from reddit r/memes using PRAW**
+/leaderboard: **leaderboard 1** (leaderboard for who it is done to)
 
+/lead: **leaderboard 2** (leaderboard for one doing it)
 
-?math: **Very Basic Calculator**
+/play: **play music from basically any platform** 
 
+/disconnect: **disconnects from vc**
 
-?bored: **Gets posts from reddit r/mildlyintresting using PRAW**
+/makeaquote: **makes a quote from given text**
 
+/download: **download videos eg: tiktoks reels etc**
 
-?echo: **Makes the bot say something, Remove the hashtag before the @has_permission to make it only for admins/mod**
+/serverinfo: **Server information**
 
-
-?search: **Search using duckduckgo, to change the browser just switch the duckduckgo link to google.**
-
-
-?ban: **Ban members.**
-
-
-?clear: **Clear messages using the bot, default value is 5.**
-
-
-?roll: **Roll a Dice**
-
-
-?eightball: **8ball**
-
-
-?square: **Square of a number**
-
-
-?serverinfo: **Server information**
-
-
-?play: **play music through the bot, you can provide a link or just list the name of the song**
-
-?tts: **text to speech**
-
-?makeaquote: **text on image, basically**
