@@ -14,6 +14,7 @@ from random import randrange
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 from discord import FFmpegPCMAudio
+from discord.ext import bridge
 from gtts import gTTS
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials 
@@ -45,7 +46,7 @@ intents.message_content = True
 intents.guilds = True           
 intents.members = True           
 intents.presences = True
-client = discord.Bot(intents=intents)
+client = bridge.Bot(command_prefix="!", intents=intents)
 
 @client.event
 async def on_command_error(ctx, error):
@@ -58,12 +59,12 @@ async def on_command_error(ctx, error):
         invalid_perms.add_field(name='Permission denied', value='You dont have the permission to use this command.', inline=False)
         await ctx.respond(embed=invalid_perms)
 
-@client.slash_command(brief="get your ping")
+@client.bridge_command(brief="get your ping")
 async def ping(ctx):
     await ctx.respond(f":ping_pong: Pong: {round(client.latency * 1000)}ms")
     return
 
-@client.slash_command(brief="Convert units")
+@client.bridge_command(brief="Convert units")
 async def convert(ctx, query: str):
     match = re.match(r"([\d.]+)\s*([a-zA-Z]+)\s*to\s*([a-zA-Z]+)", query)
     if match:
@@ -96,7 +97,7 @@ async def convert(ctx, query: str):
 
 
 
-@client.slash_command(brief="russian roulette",description="game of life and death!")
+@client.bridge_command(brief="russian roulette",description="game of life and death!")
 async def rusroulet(ctx):
   user = ctx.author
   await ctx.respond("""
@@ -119,25 +120,25 @@ async def rusroulet(ctx):
     await ctx.respond(f"Your Numbers are {num1} and {num2}, You live to see another day!")
   return
 
-@client.slash_command(brief="get user avatar")
+@client.bridge_command(brief="get user avatar")
 async def av(ctx, *,  avamember : discord.Member=None):
     userAvatarUrl = avamember.avatar_url
     await ctx.respond(userAvatarUrl)
     return		
 
-@client.slash_command(brief="calculator")
+@client.bridge_command(brief="calculator")
 async def math(ctx,opreation:str):
     await ctx.respond(eval(opreation))
     return
 	
 
-@client.slash_command(brief="make the bot say something!")
+@client.bridge_command(brief="make the bot say something!")
 async def echo(ctx, *, lol):
     await ctx.respond(lol)
     return
 
 
-@client.slash_command(brief="i speak what u say uwu")
+@client.bridge_command(brief="i speak what u say uwu")
 async def tts(ctx, *, text):
 	language = "en"
 	vo = gTTS(text=text,lang=language,slow=False,tld="ie")
@@ -146,7 +147,7 @@ async def tts(ctx, *, text):
 	os.system("rm tts.mp3")
 	return
 
-@client.slash_command(brief="surf the internet.", description="search using duckduckgo.")
+@client.bridge_command(brief="surf the internet.", description="search using duckduckgo.")
 async def search(ctx, *, earch):
    lo = earch.replace(" ","+")
    ct = (f'https://duckduckgo.com/?q={lo}')
@@ -156,7 +157,7 @@ async def search(ctx, *, earch):
    return
 
 
-@client.slash_command()    
+@client.bridge_command()    
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason: str = None):
     if not ctx.guild.me.guild_permissions.ban_members:
@@ -166,7 +167,7 @@ async def ban(ctx, member: discord.Member, *, reason: str = None):
     await member.ban(reason=reason)
     await ctx.respond(f'{member.mention} has been banned. Reason: {reason or "No reason provided."}')
 
-@client.slash_command()
+@client.bridge_command()
 async def clear(ctx, amount=5):
     if ctx.author.guild_permissions.manage_messages or ctx.author.id == 720697133531004981:
         amount = amount + 1
@@ -180,7 +181,7 @@ async def clear(ctx, amount=5):
         await ctx.respond("you are not permitted for this action")
     return
 
-@client.slash_command(brief="roll a dice")
+@client.bridge_command(brief="roll a dice")
 async def roll(ctx, limit=5):
     limit = limit + 1
     print("[DEBUG] got here")
@@ -188,13 +189,13 @@ async def roll(ctx, limit=5):
     await ctx.respond(f":game_die: {number}")
     return
     
-@client.slash_command(name="8ball", brief="ask the bot something")
+@client.bridge_command(name="8ball", brief="ask the bot something")
 async def eightball(ctx):
 	ers = ["yes", "no", "im not sure", "fuck off"]
 	joke = random.choice(ers)
 	await ctx.respond(joke)
 
-@client.slash_command()
+@client.bridge_command()
 async def bmi(ctx, weight:float,*, hgt:float):
 	we = weight
 	hg = hgt*hgt
@@ -203,7 +204,7 @@ async def bmi(ctx, weight:float,*, hgt:float):
 	return
 
 
-@client.slash_command(name="thinge")
+@client.bridge_command(name="thinge")
 async def thinge(ctx, user: discord.User):
     await ctx.respond(f"<@{user.id}> got thinged!")  
     value = user.name
@@ -234,7 +235,7 @@ async def thinge(ctx, user: discord.User):
     return
 
 
-@client.slash_command(name="thingesboard")
+@client.bridge_command(name="thingesboard")
 async def leaderboard(ctx):
     embed1 = discord.Embed(title="thinged Leaderboard", description= "thinge victims", colour=discord.Colour.purple())
     embed1.add_field(name=f"1. @{sheet.acell('A2').value}", value= sheet.acell('B2').value + " thinges", inline=False)
@@ -251,7 +252,7 @@ async def leaderboard(ctx):
     await ctx.respond(embed=embed1)
     return
 
-@client.slash_command(name="thingistboard")
+@client.bridge_command(name="thingistboard")
 async def lead(ctx):
     embed1 = discord.Embed(title="thingist Leaderboard", description= "thingists", colour=discord.Colour.purple())
     embed1.add_field(name=f"1. @{shoot.acell('A2').value}", value= shoot.acell('B2').value + " thinged", inline=False)
@@ -269,7 +270,7 @@ async def lead(ctx):
     return
 
 
-@client.slash_command(brief="play music",description="supported sites: https://docs.yt-dlp.org/en/latest/supportedsites.html")
+@client.bridge_command(brief="play music",description="supported sites: https://docs.yt-dlp.org/en/latest/supportedsites.html")
 async def play(ctx, *, link: str = None):
     vcc = ctx.author.voice
     if not vcc:
@@ -313,7 +314,7 @@ async def play(ctx, *, link: str = None):
     except Exception as e:
         await ctx.respond(f"An error occurred: {str(e)}")
 
-@client.slash_command(brief="disconnect from the voice channel")
+@client.bridge_command(brief="disconnect from the voice channel")
 async def disconnect(ctx):
     voice_client = discord.utils.get(client.voice_clients, guild=ctx.guild)
     if voice_client and voice_client.is_connected():
@@ -323,7 +324,7 @@ async def disconnect(ctx):
         await ctx.respond("I'm not connected to any voice channel.")
 
 
-@client.slash_command(brief="quotes")
+@client.bridge_command(brief="quotes")
 async def makeaquote(ctx,*,quote):
     myim = Image.open("black.png")
     title_text = f"""  {textwthing.fill(quote, width=30)} 
@@ -336,7 +337,7 @@ async def makeaquote(ctx,*,quote):
     os.system("rm quote.png")
     return
 
-@client.slash_command(brief="Get server information")
+@client.bridge_command(brief="Get server information")
 async def serverinfo(ctx):
     svr_name = ctx.guild.name
     member_count = len(ctx.guild.members)
@@ -348,7 +349,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Number of Roles:", value=role_count, inline=True)
     await ctx.respond(embed=embed)
 
-@client.slash_command(brief="Download video from any site")
+@client.bridge_command(brief="Download video from any site")
 async def download(ctx, url: str):
     await ctx.respond("Downloading your video... Please wait.")
 
